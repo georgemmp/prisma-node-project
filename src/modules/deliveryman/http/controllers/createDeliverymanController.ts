@@ -13,7 +13,7 @@ export const createDeliverymanController = async (
   const { username, password } = request.body;
   const useCase = deliverymanUseCase(deliverymanRepository());
   let data = await useCase.createDeliveryman({ username, password });
-  const { create } = responseHandler(response, data);
+  const { created } = responseHandler(response, data);
   log.info('Created deliveryman '.concat(JSON.stringify(data.username)));
-  return create();
+  return created();
 };

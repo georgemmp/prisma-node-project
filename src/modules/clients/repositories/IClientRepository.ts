@@ -1,4 +1,3 @@
-import { Delivery } from '../../deliveries/entities/Delivery';
 import { Client } from '../entities/Client';
 
 export interface IClientRepository {

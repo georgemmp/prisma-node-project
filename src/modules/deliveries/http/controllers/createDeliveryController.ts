@@ -16,7 +16,7 @@ export const createDeliveryController = async (
   const useCase = deliveryUseCase(deliveryRepository());
   const { createDelivery } = useCase;
   const data = await createDelivery({ id_client, item_name });
-  const { create } = responseHandler(response, data);
+  const { created } = responseHandler(response, data);
   log.info('Successfully created delivery '.concat(JSON.stringify(data)));
-  return create();
+  return created();
 };

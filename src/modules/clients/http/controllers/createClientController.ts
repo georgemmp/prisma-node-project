@@ -13,7 +13,7 @@ export const createClientController = async (
   const { username, password } = request.body;
   const useCase = clientUseCase(clientRepository());
   let data = await useCase.createClient({ username, password });
-  const { create } = responseHandler(response, data);
+  const { created } = responseHandler(response, data);
   log.info('Created client '.concat(JSON.stringify(data.username)));
-  return create();
+  return created();
 };
